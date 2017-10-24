@@ -24,8 +24,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   var action1Button = document.querySelector('.action1')
   var overlayImage = document.querySelector('.app__demo')
+  overlayImage.style.visibility = 'hidden'
 
   action1Button.addEventListener('click', function() {
+    console.log(overlayImage.style.visibility)
     if (overlayImage.style.visibility === 'hidden') {
       overlayImage.style.visibility = 'visible'
     } else {
