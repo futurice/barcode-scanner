@@ -22,18 +22,50 @@ window.addEventListener("DOMContentLoaded", () => {
   //To check the device and add iOS support
   window.iOS = ['iPad', 'iPhone', 'iPod'].indexOf(navigator.platform) >= 0;
 
-  var action1Button = document.querySelector('.action1')
-  var overlayImage = document.querySelector('.app__demo')
-  overlayImage.style.visibility = 'hidden'
+  ////////////// DEMO JS
+  var state = {
+    isButton1Toggled: false,
+    isButton2Toggled: false,
+  }
 
-  action1Button.addEventListener('click', function() {
-    if (overlayImage.style.visibility === 'hidden') {
-      overlayImage.style.visibility = 'visible'
-    } else {
-      overlayImage.style.visibility = 'hidden'
+  var action1Button = document.querySelector('.action1-js')
+  var action2Button = document.querySelector('.action2-js')
+  var action1Image = document.querySelector('.image1-js')
+  var action2Image = document.querySelector('.image2-js')
+
+  action1Image.style.display = 'none'
+  action2Image.style.display = 'none'
+
+  function toggleButton1() {
+    toggleElement(action1Image)
+    state.isButton1Toggled = !state.isButton1Toggled
+
+    if (state.isButton1Toggled && state.isButton2Toggled) {
+      toggleButton2()
     }
-  })
+  }
 
+  function toggleButton2() {
+    toggleElement(action2Image)
+    state.isButton2Toggled = !state.isButton2Toggled
+
+    if (state.isButton1Toggled && state.isButton2Toggled) {
+      toggleButton1()
+    }
+  }
+
+  function toggleElement(element) {
+    if (element.style.display === 'none') {
+      element.style.display = 'inline'
+    } else {
+      element.style.display = 'none'
+    }
+  }
+
+  action1Button.addEventListener('click', toggleButton1)
+  action2Button.addEventListener('click', toggleButton2)
+
+  /////////
 
   var copiedText = null;
   var frame = null;
