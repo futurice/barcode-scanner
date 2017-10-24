@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
     QRReader.init(); //To initialize QR Scanner
     // Set camera overlay size
     setTimeout(() => { 
-      setCameraOverlay();
+      // setCameraOverlay();
       if (!window.iOS) {
         scan();
       }
@@ -60,8 +60,8 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   
   //Dialog close btn event
-  dialogCloseBtnElement.addEventListener('click', hideDialog, false);
-  dialogOpenBtnElement.addEventListener('click', openInBrowser, false);
+  // dialogCloseBtnElement.addEventListener('click', hideDialog, false);
+  // dialogOpenBtnElement.addEventListener('click', openInBrowser, false);
 
   //To open result in browser
   function openInBrowser() {
@@ -74,17 +74,6 @@ window.addEventListener("DOMContentLoaded", () => {
   //Scan
   function scan() {
     if (!window.iOS) scanningEle.style.display = 'block';
-    QRReader.scan((result) => {
-      copiedText = result;
-      textBoxEle.value = result;
-      textBoxEle.select();
-      scanningEle.style.display = 'none';
-      if (isURL(result)) {
-        dialogOpenBtnElement.style.display = 'inline-block';
-      }
-      dialogElement.classList.remove('app__dialog--hide');
-      dialogOverlayElement.classList.remove('app__dialog--hide');
-    });
   }
 
   //Hide dialog
@@ -128,20 +117,20 @@ window.addEventListener("DOMContentLoaded", () => {
     pageContentElement.appendChild(frame);
 
     //Click of camera fab icon
-    selectPhotoBtn.addEventListener('click', () => {
-      scanningEle.style.display = 'none';
-      document.querySelector("#camera").click();
-    });
+    // selectPhotoBtn.addEventListener('click', () => {
+    //   scanningEle.style.display = 'none';
+    //   document.querySelector("#camera").click();
+    // });
     
     //On camera change
-    camera.addEventListener('change', (event) => {
-      if (event.target && event.target.files.length > 0) {
-        frame.className = 'app__overlay';
-        frame.src = URL.createObjectURL(event.target.files[0]);
-        scanningEle.style.display = 'block';
-        window.appOverlay.style.borderColor = '#212121';
-        scan();
-      }
-    });
+    // camera.addEventListener('change', (event) => {
+    //   if (event.target && event.target.files.length > 0) {
+    //     frame.className = 'app__overlay';
+    //     frame.src = URL.createObjectURL(event.target.files[0]);
+    //     scanningEle.style.display = 'block';
+    //     window.appOverlay.style.borderColor = '#212121';
+    //     scan();
+    //   }
+    // });
   }
 });
