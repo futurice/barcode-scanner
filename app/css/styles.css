@@ -383,20 +383,16 @@ video {
 
 
 
-.button,
-button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-  background-color: #9b4dca;
-  border: 0.1rem solid #9b4dca;
+.button {
+  background-color: rgb(0, 56, 130);
+  border: 0.1rem solid rgb(0, 56, 130);
   border-radius: 0;
-  color: #fff;
+  color: rgb(255, 217, 0);
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
   font-weight: 700;
-  flex-grow: 1;
+  flex-basis: 50%;
   height: 3.8rem;
   letter-spacing: .1rem;
   line-height: 3.8rem;
@@ -407,113 +403,21 @@ input[type='submit'] {
   white-space: nowrap;
 }
 
-.button:focus, .button:hover,
-button:focus,
-button:hover,
-input[type='button']:focus,
-input[type='button']:hover,
-input[type='reset']:focus,
-input[type='reset']:hover,
-input[type='submit']:focus,
-input[type='submit']:hover {
-  background-color: #606c76;
-  border-color: #606c76;
-  color: #fff;
+.button:focus, .button:hover {
+  background-color: rgb(255, 217, 0);
+  border-color: rgb(255, 217, 0);
+  color: rgb(0, 56, 130);
   outline: 0;
 }
 
-.button[disabled],
-button[disabled],
-input[type='button'][disabled],
-input[type='reset'][disabled],
-input[type='submit'][disabled] {
+.button[disabled] {
   cursor: default;
   opacity: .5;
 }
 
-.button[disabled]:focus, .button[disabled]:hover,
-button[disabled]:focus,
-button[disabled]:hover,
-input[type='button'][disabled]:focus,
-input[type='button'][disabled]:hover,
-input[type='reset'][disabled]:focus,
-input[type='reset'][disabled]:hover,
-input[type='submit'][disabled]:focus,
-input[type='submit'][disabled]:hover {
-  background-color: #9b4dca;
-  border-color: #9b4dca;
-}
-
-.button.button-outline,
-button.button-outline,
-input[type='button'].button-outline,
-input[type='reset'].button-outline,
-input[type='submit'].button-outline {
-  background-color: transparent;
-  color: #9b4dca;
-}
-
-.button.button-outline:focus, .button.button-outline:hover,
-button.button-outline:focus,
-button.button-outline:hover,
-input[type='button'].button-outline:focus,
-input[type='button'].button-outline:hover,
-input[type='reset'].button-outline:focus,
-input[type='reset'].button-outline:hover,
-input[type='submit'].button-outline:focus,
-input[type='submit'].button-outline:hover {
-  background-color: transparent;
-  border-color: #606c76;
-  color: #606c76;
-}
-
-.button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover,
-button.button-outline[disabled]:focus,
-button.button-outline[disabled]:hover,
-input[type='button'].button-outline[disabled]:focus,
-input[type='button'].button-outline[disabled]:hover,
-input[type='reset'].button-outline[disabled]:focus,
-input[type='reset'].button-outline[disabled]:hover,
-input[type='submit'].button-outline[disabled]:focus,
-input[type='submit'].button-outline[disabled]:hover {
-  border-color: inherit;
-  color: #9b4dca;
-}
-
-.button.button-clear,
-button.button-clear,
-input[type='button'].button-clear,
-input[type='reset'].button-clear,
-input[type='submit'].button-clear {
-  background-color: transparent;
-  border-color: transparent;
-  color: #9b4dca;
-}
-
-.button.button-clear:focus, .button.button-clear:hover,
-button.button-clear:focus,
-button.button-clear:hover,
-input[type='button'].button-clear:focus,
-input[type='button'].button-clear:hover,
-input[type='reset'].button-clear:focus,
-input[type='reset'].button-clear:hover,
-input[type='submit'].button-clear:focus,
-input[type='submit'].button-clear:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: #606c76;
-}
-
-.button.button-clear[disabled]:focus, .button.button-clear[disabled]:hover,
-button.button-clear[disabled]:focus,
-button.button-clear[disabled]:hover,
-input[type='button'].button-clear[disabled]:focus,
-input[type='button'].button-clear[disabled]:hover,
-input[type='reset'].button-clear[disabled]:focus,
-input[type='reset'].button-clear[disabled]:hover,
-input[type='submit'].button-clear[disabled]:focus,
-input[type='submit'].button-clear[disabled]:hover {
-  color: #9b4dca;
+.button[disabled]:focus, .button[disabled]:hover {
+  background-color: rgb(0, 56, 130);
+  border-color: rgb(0, 56, 130);
 }
 
 .app__demo {
@@ -526,7 +430,6 @@ input[type='submit'].button-clear[disabled]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
 }
 
 .app__image-container {
@@ -542,11 +445,14 @@ input[type='submit'].button-clear[disabled]:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: flex;
   /*background: #607D8B;*/
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 10;
+}
+
+.app__demo__image {
+  display: none;
 }
