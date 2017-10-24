@@ -22,6 +22,18 @@ window.addEventListener("DOMContentLoaded", () => {
   //To check the device and add iOS support
   window.iOS = ['iPad', 'iPhone', 'iPod'].indexOf(navigator.platform) >= 0;
 
+  var action1Button = document.querySelector('.action1')
+  var overlayImage = document.querySelector('.app__demo')
+
+  action1Button.addEventListener('click', function() {
+    if (overlayImage.style.visibility === 'hidden') {
+      overlayImage.style.visibility = 'visible'
+    } else {
+      overlayImage.style.visibility = 'hidden'
+    }
+  })
+
+
   var copiedText = null;
   var frame = null;
   var selectPhotoBtn = document.querySelector('.app__select-photos');
@@ -43,7 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => { 
       // setCameraOverlay();
       if (!window.iOS) {
-        scan();
+        // scan();
       }
     }, 1000);
   });

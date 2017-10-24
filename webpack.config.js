@@ -14,6 +14,7 @@ const config = {
     filename: 'bundle.js'
   },
   devServer: {
+	  port: 4000,
     compress: true,
     contentBase: __dirname + '/app'
   },
