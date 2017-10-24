@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", () => {
   overlayImage.style.visibility = 'hidden'
 
   action1Button.addEventListener('click', function() {
-    console.log(overlayImage.style.visibility)
     if (overlayImage.style.visibility === 'hidden') {
       overlayImage.style.visibility = 'visible'
     } else {
