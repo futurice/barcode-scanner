@@ -31,12 +31,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   var images = {
     case1: {
-      image1: 'http://via.placeholder.com/540x715?text=img1',
-      image2: 'http://via.placeholder.com/540x715/ffffff/000000?text=img2'
+      image1: '/images/flow1/1.png',
+      image2: '/images/flow1/2.png'
     },
     case2: {
-      image1: 'http://via.placeholder.com/540x715?text=img3',
-      image2: 'http://via.placeholder.com/540x715/ffffff/000000?text=img4'
+      image1: '/images/flow2/1.png',
+      image2: '/images/flow2/2.png'
     }
   }
 
