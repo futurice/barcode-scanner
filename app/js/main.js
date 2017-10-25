@@ -26,15 +26,30 @@ window.addEventListener("DOMContentLoaded", () => {
   var state = {
     isButton1Toggled: false,
     isButton2Toggled: false,
+    displayedImages: false, // there are two cases now - therefore boolean
+  }
+
+  var images = {
+    case1: {
+      image1: 'http://via.placeholder.com/540x715?text=img1',
+      image2: 'http://via.placeholder.com/540x715/ffffff/000000?text=img2'
+    },
+    case2: {
+      image1: 'http://via.placeholder.com/540x715?text=img3',
+      image2: 'http://via.placeholder.com/540x715/ffffff/000000?text=img4'
+    }
   }
 
   var action1Button = document.querySelector('.action1-js')
   var action2Button = document.querySelector('.action2-js')
   var action1Image = document.querySelector('.image1-js')
   var action2Image = document.querySelector('.image2-js')
+  var changeCaseButton = document.querySelector('.change-case-js')
 
+  // Init
   action1Image.style.display = 'none'
   action2Image.style.display = 'none'
+  changeImages()
 
   function toggleButton1() {
     toggleElement(action1Image)
@@ -42,6 +57,31 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (state.isButton1Toggled && state.isButton2Toggled) {
       toggleButton2()
+    }
+
+    toggleImageSwitich()
+  }
+
+  function setImages(imageObject) {
+    action1Image.src = imageObject.image1
+    action2Image.src = imageObject.image2
+  }
+
+  function changeImages() {
+    if(!state.displayedImages) {
+      setImages(images.case1)
+      state.displayedImages = !state.displayedImages
+    } else {
+      setImages(images.case2)
+      state.displayedImages = !state.displayedImages
+    }
+  }
+
+  function toggleImageSwitich() {
+    if(state.isButton1Toggled || state.isButton2Toggled) {
+      changeCaseButton.style.display = 'inline'
+    } else {
+      changeCaseButton.style.display = 'none'
     }
   }
 
@@ -52,6 +92,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (state.isButton1Toggled && state.isButton2Toggled) {
       toggleButton1()
     }
+
+    toggleImageSwitich()
   }
 
   function toggleElement(element) {
@@ -62,8 +104,21 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function toggleButtonsOff() {
+    if(state.isButton1Toggled) {
+      toggleButton1()
+    }
+    if(state.isButton2Toggled) {
+      toggleButton2()
+    }
+  }
+
   action1Button.addEventListener('click', toggleButton1)
   action2Button.addEventListener('click', toggleButton2)
+  changeCaseButton.addEventListener('click', function() {
+    changeImages()
+    toggleButtonsOff()
+  })
 
   /////////
 

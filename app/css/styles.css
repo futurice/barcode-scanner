@@ -422,7 +422,7 @@ video {
 
 .app__demo {
   position: absolute;
-  top:0;
+  top: 50px;
   bottom: 3.8rem;
   left: 0;
   right: 0;
@@ -451,6 +451,25 @@ video {
   left: 0;
   right: 0;
   z-index: 10;
+}
+
+.app__demo__header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.app__demo__header img {
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
 }
 
 .app__demo__image {
