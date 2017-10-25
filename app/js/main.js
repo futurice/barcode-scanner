@@ -49,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Init
   action1Image.style.display = 'none'
   action2Image.style.display = 'none'
+  changeCaseButton.style.display = 'none'
   changeImages()
 
   function toggleButton1() {
@@ -59,7 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
       toggleButton2()
     }
 
-    toggleImageSwitich()
+    toggleImageSwitch()
   }
 
   function setImages(imageObject) {
@@ -77,11 +78,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function toggleImageSwitich() {
+  function toggleImageSwitch() {
     if(state.isButton1Toggled || state.isButton2Toggled) {
-      changeCaseButton.style.display = 'inline'
+      toggleElement(changeCaseButton)
     } else {
-      changeCaseButton.style.display = 'none'
+      toggleElement(changeCaseButton)
     }
   }
 
@@ -93,7 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
       toggleButton1()
     }
 
-    toggleImageSwitich()
+    toggleImageSwitch()
   }
 
   function toggleElement(element) {
