@@ -44,13 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
   var action2Button = document.querySelector('.action2-js')
   var action1Image = document.querySelector('.image1-js')
   var action2Image = document.querySelector('.image2-js')
-  var changeCaseButton = document.querySelector('.change-case-js')
+  var buttonChangeImages = document.querySelector('.change-case-js') // Close button
   var overlay = document.querySelector('.app__demo-js')
 
   // Init
   action1Image.style.display = 'none'
   action2Image.style.display = 'none'
-  changeCaseButton.style.display = 'none'
+  buttonChangeImages.style.display = 'none'
   changeImages()
 
   function toggleButton1() {
@@ -81,9 +81,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function toggleImageSwitch() {
     if(state.isButton1Toggled || state.isButton2Toggled) {
-      toggleElement(changeCaseButton)
+      toggleElement(buttonChangeImages)
     } else {
-      toggleElement(changeCaseButton)
+      toggleElement(buttonChangeImages)
     }
   }
 
@@ -117,7 +117,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   action1Button.addEventListener('click', toggleButton1)
   action2Button.addEventListener('click', toggleButton2)
-  changeCaseButton.addEventListener('click', function() {
+  buttonChangeImages.addEventListener('click', function() {
     changeImages()
     toggleButtonsOff()
   })
