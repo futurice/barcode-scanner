@@ -45,6 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
   var action1Image = document.querySelector('.image1-js')
   var action2Image = document.querySelector('.image2-js')
   var changeCaseButton = document.querySelector('.change-case-js')
+  var overlay = document.querySelector('.app__demo-js')
 
   // Init
   action1Image.style.display = 'none'
@@ -119,6 +120,11 @@ window.addEventListener("DOMContentLoaded", () => {
   changeCaseButton.addEventListener('click', function() {
     changeImages()
     toggleButtonsOff()
+  })
+  overlay.addEventListener('click', function() {
+    if(state.isButton1Toggled){
+      toggleButton2()
+    }
   })
 
   /////////
